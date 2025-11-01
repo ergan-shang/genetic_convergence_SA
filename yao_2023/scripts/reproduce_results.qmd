@@ -1,0 +1,85 @@
+---
+title: "reproduce_results"
+author: "Tianyu Zhang, Ergan Shang and Kathryn Roeder"
+format: html
+editor: visual
+---
+
+```{r}
+library(here)
+library(glue)
+library(data.table)
+library(ggplot2)
+library(igraph)
+library(doParallel)
+library(foreach)
+library(highmean)
+library(scales)
+
+
+work_directory <- here::here()
+print(work_directory)
+```
+## Results of XConTest
+
+### Apply aggregated XConTest to all perturbations. Probably want to run this on a cluster.
+
+```{r, eval = FALSE}
+system2("Rscript", file.path(work_directory, "yao_2023/code/51_systematic_process_all_in_paper_cluster.R"))
+system2("Rscript", file.path(work_directory, "yao_2023/code/52_process_results_cluster.R"))
+```
+
+### 
+
+```{r}
+source(file.path(work_directory, '/yao_2023/code/54_graph_visualization.R'),
+       local = TRUE)
+```
+
+### Create the convergence plot for XConTest
+
+```{r}
+source(file.path(work_directory, '/yao_2023/code/91_overall_convergence_and_number_module.R'),
+       local = TRUE)
+```
+
+## Results of Dset
+
+### Apply Dset to all perturbations and all modules. Probably want to run this on a cluster.
+
+```{r, eval = FALSE}
+system2("Rscript", file.path(work_directory, "yao_2023/code/A1_chen_method.R"))
+system2("Rscript", file.path(work_directory, "yao_2023/code/A2_process_result.R"))
+```
+
+### Create the convergence plot for Dset
+
+```{r}
+source(file.path(work_directory, '/yao_2023/code/A3_chen_convergence_and_number_module.R'),
+       local = TRUE)
+```
+
+## Perturbation pairs of more interest
+
+```{r}
+source(file.path(work_directory, 'R/collect_and_structure_results.R'))
+```
+
+### Examine perturbation pairs with more convergent modules
+
+```{r}
+source(file.path(work_directory, '/yao_2023/code/B1_collect_many_module_converge.R'),
+       local = TRUE)
+```
+### Create igraph for perturbations with $\geq 3$ convergent modules.
+
+```{r}
+source(file.path(work_directory, '/yao_2023/code/B2_create_perturbation_igraph.R'),
+       local = TRUE)
+```
+### Examine selected perturbation pairs
+
+```{r}
+source(file.path(work_directory, '/yao_2023/code/B3_venn_diagram.R'),
+       local = TRUE)
+```
