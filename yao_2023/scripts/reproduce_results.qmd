@@ -133,13 +133,14 @@ source(file.path(code_directory, 'B3_venn_diagram.R'),
 
 ### Create the scLinker Plot by Dset
 
-```{r}
+```{r, eval = FALSE}
 source(file.path(code_directory, 'C2_scLinker_Dset.R'),
        local = TRUE)
 ```
-### Create the LOEUF Plot 
 
-```{r}
+### Create the LOEUF Plot
+
+```{r, eval = FALSE}
 source(file.path(code_directory, 'C3_hist_LOEUF.R'),
        local = TRUE)
 ```
