@@ -22,6 +22,7 @@ library(scales)
 library(dplyr)
 library(Seurat)
 library(patchwork)
+library(reshape2)
 
 work_directory <- here::here()
 code_directory <- paste0(work_directory, '/yao_2023/code')
@@ -83,7 +84,7 @@ source(file.path(code_directory, '91_overall_convergence_and_number_module.R'),
 ### Create the scLinker Plot by XConTest
 
 ```{r}
-source(file.path(code_directory, 'C1_scLinker.R'),
+source(file.path(code_directory, 'C1_scLinker_XConTest.R'),
        local = TRUE)
 ```
 
@@ -133,6 +134,12 @@ source(file.path(code_directory, 'B3_venn_diagram.R'),
 ### Create the scLinker Plot by Dset
 
 ```{r}
-source(file.path(code_directory, 'C2_scLinker_direct.R'),
+source(file.path(code_directory, 'C2_scLinker_Dset.R'),
+       local = TRUE)
+```
+### Create the LOEUF Plot 
+
+```{r}
+source(file.path(code_directory, 'C3_hist_LOEUF.R'),
        local = TRUE)
 ```
