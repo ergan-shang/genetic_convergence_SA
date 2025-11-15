@@ -129,3 +129,10 @@ source(file.path(code_directory, 'B2_create_perturbation_igraph.R'),
 source(file.path(code_directory, 'B3_venn_diagram.R'),
        local = TRUE)
 ```
+
+### Create the scLinker Plot by Dset
+
+```{r}
+source(file.path(code_directory, 'C2_scLinker_direct.R'),
+       local = TRUE)
+```
