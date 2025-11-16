@@ -18,11 +18,9 @@ code_directory <- paste0(work_directory, '/simulation/code')
 code_directory |> print()
 ```
 
-
-
 ### Create the All Simulation Results
 
-```{r, eval = FALSE}
+```{r, warning = FALSE}
 source(file.path(code_directory, 'plot_for_paper_sim.R'),
        local = TRUE)
 ```

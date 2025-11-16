@@ -1,7 +1,7 @@
-plot_path<-file.path(work_directory, 'lalli', 'report')
+plot_path<-file.path(work_directory, 'lalli_2020', 'report')
 dir.create(plot_path, recursive = TRUE)
 
-data_path<-file.path(work_directory, 'lalli', 'data', 'intermediate_data')
+data_path<-file.path(work_directory, 'lalli_2020', 'data', 'intermediate_data')
 
 amazing_scatterplot_asym<-function(all_names, method, data_path, postfix, store_path, png_name, scale_divider, count_method, p_thres=0.05){
   # method is "shared" or "refit"

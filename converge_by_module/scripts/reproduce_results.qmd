@@ -37,7 +37,7 @@ source(file.path(code_directory, '02_test_raw_count_1se_200_400_standardize.R'),
 
 ### Create the Results of XConTest
 
-```{r, eval = FALSE}
+```{r}
 source(file.path(code_directory, '03_draw_test_raw_count_1se_200_400_standardize.R'),
        local = TRUE)
 ```
@@ -51,7 +51,7 @@ source(file.path(code_directory, '04_bm_Chen.R'),
 
 ### Create the Results of Dset
 
-```{r, eval = FALSE}
+```{r}
 source(file.path(code_directory, '05_bm_Chen_draw.R'),
        local = TRUE)
 ```
