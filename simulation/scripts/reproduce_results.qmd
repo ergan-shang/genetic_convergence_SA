@@ -1,0 +1,26 @@
+---
+title: "Analysis pipeline of applying XConTest for Simulation Study"
+author: "Tianyu Zhang, Ergan Shang and Kathryn Roeder"
+format: html
+editor: visual
+---
+
+```{r, echo = FALSE, warning = FALSE, message = FALSE}
+library(ggplot2)
+library(ggpubr)
+library(tidyverse)
+library(parallel)
+library(data.table)
+library(HMC)
+
+work_directory <- here::here()
+code_directory <- paste0(work_directory, '/simulation/code')
+code_directory |> print()
+```
+
+### Create the All Simulation Results
+
+```{r, warning = FALSE}
+source(file.path(code_directory, 'plot_for_paper_sim.R'),
+       local = TRUE)
+```
